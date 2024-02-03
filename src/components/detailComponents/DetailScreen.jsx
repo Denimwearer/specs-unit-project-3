@@ -32,7 +32,7 @@ const DetailScreen = () => {
           {recipe.ingredients &&
             recipe.ingredients.map((ing, index) => {
               return (
-                <h4>
+                <h4 key={index}>
                   {ing.quantity} {ing.ingredient}
                 </h4>
               );
@@ -42,9 +42,7 @@ const DetailScreen = () => {
 
         <div className={styles.instruction_container}>
           <h2>Instructions</h2>
-          <p style={{ whiteSpace: "pre-wrap" }}>
-            {recipe.instructions && JSON.parse(recipe.instructions)}
-          </p>
+          <p style={{ whiteSpace: "pre-wrap" }}>{recipe.instructions}</p>
         </div>
       </div>
     </section>
